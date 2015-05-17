@@ -1,0 +1,10 @@
+Projekti on yksinkertainen luolastogeneraattori.
+
+Itse generaattori voidaan toteuttaa usealla tavalla, joten l‰hestymistapoja on monia.
+
+T‰ss‰ projektissa k‰yt‰n hyvin yksinkertaista algoritmia joka tulee toimimaan jotakuinkin n‰in:
+
+- M‰‰rit‰ huoneiden m‰‰r‰
+- Generoi satunnaisen kokoisia huoneita matriisiin ja varmista ettei huoneet osu p‰‰llekk‰in
+- Kun huoneet on generoitu k‰ytet‰‰n reititysalgoa kuten A* jolla huoneiden v‰liin generoidaan tunneleita
+- Varmistetaan ett‰ kaikki huoneet on yhdistetty ja n‰in luolasto on valmis
