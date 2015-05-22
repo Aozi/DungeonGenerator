@@ -4,6 +4,9 @@
 object DungeonGenerator {
 
     def main(args: Array[String]) {
-      print("Hello world")
+      //print("Hello world")
+
+      val dMap = new DungeonMap(20,20,3)
+
   }
 }
