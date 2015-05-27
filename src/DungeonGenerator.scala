@@ -11,6 +11,10 @@ object DungeonGenerator {
       //print(dMap.myMap.length)
       //print(dMap.myMap(0).length)
 
+      for (p <- dMap.doorList) {
+        print("yay")
+      }
+
       print(dMap)
 
   }
