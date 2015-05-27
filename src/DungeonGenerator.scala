@@ -6,7 +6,12 @@ object DungeonGenerator {
     def main(args: Array[String]) {
       //print("Hello world")
 
-      val dMap = new DungeonMap(20,20,3)
+      val dMap = new DungeonMap(50,50,8)
+
+      //print(dMap.myMap.length)
+      //print(dMap.myMap(0).length)
+
+      print(dMap)
 
   }
 }
