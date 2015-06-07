@@ -1,7 +1,11 @@
-import java.util
+import scala.collection.mutable.ListBuffer
 
 /**
- * Created by Aozi on 23.5.2015.
+ * Main class for the dungeon generation
+ * @constructor Create a new dungeon with the specified size
+ * @param height The height of the dungeon
+ * @param width Width of the dungeon
+ * @param numRooms Number of rooms to generate for the dungeon
  */
 class DungeonMap(height: Int, width: Int, numRooms: Int) {
 
@@ -11,7 +15,7 @@ class DungeonMap(height: Int, width: Int, numRooms: Int) {
 
   var roomList = List.fill(numRooms)(genRoom())
 
-  var doorList = List
+  var doorList = new ListBuffer[Point]
 
 
   for(roomToAdd <- roomList) {
@@ -21,40 +25,52 @@ class DungeonMap(height: Int, width: Int, numRooms: Int) {
     }
   }
 
+  /**
+   * Adds a specific cell to the list of doors for the pathfinding
+   * @param x X coordinate for the door
+   * @param y Y coordinate for the door
+   */
+
   def addToDoorList(x: Int, y: Int): Unit = {
-    doorList.add(new Point(x,y))
+    doorList += new Point(x,y)
   }
-  /*
-  Generates a random room with at least 3 height and width
+
+  /**
+   * Generates a room of 3-9 cells high/wide and returns the corresponding matrix
+   * @return Returns the matrix of the room
    */
   def genRoom(): Array[Array[Int]] =  {
     var a = Array.fill(rnd.nextInt(6)+3,rnd.nextInt(6)+3)(1)
     rnd.nextInt(3) match {
       case 0 => a(0)(a(0).length/2) = 3;
-        //addToDoorList(0,a(0).length/2)
+        addToDoorList(0,a(0).length/2)
 
       case 1 => a(a.length/2)(0) = 3;
-        //addToDoorList(a.length/2,0)
+        addToDoorList(a.length/2,0)
 
       case 2 => a(a.length-1)(a(0).length/2) = 3;
-        //addToDoorList(a.length-1,a(0).length/2)
+        addToDoorList(a.length-1,a(0).length/2)
 
       case 3 => a(a.length/2)(a(0).length-1) = 3;
-        //addToDoorList(a.length/2,a(0).length-1)
+        addToDoorList(a.length/2,a(0).length-1)
 
     }
 
     return a
   }
 
-  /*
-  Selects a random spot in the dungeon map to place the room in.
+  /**
+   * Selects a random location on the entire dungeon map for a room
+   * @return Return a Point with the x and y coordinates of the chosen spot
    */
-
   def roomSpot(): Point = new Point(rnd.nextInt(height),rnd.nextInt(width))
 
-  /*
-  Checks if the current room being tried can be places on the specified spot
+  /**
+   * Checks if given room fits on a specified spot
+   * @param h Height of the room
+   * @param w Width of the room
+   * @param p Point to test
+   * @return Return true if the room fits, false if it does not
    */
   def doesItFit(h: Int, w: Int, p: Point): Boolean = {
     if(p.x+h >= myMap.length || p.y+w >= myMap(0).length) return false
@@ -66,9 +82,12 @@ class DungeonMap(height: Int, width: Int, numRooms: Int) {
     return true
   }
 
-/*
-Places a room on the dungeon
- */
+
+  /**
+   * Method to place a room on the current dungeon map
+   * @param curRoom 2D matrix representing the room to place
+   * @return returns true if placement succeeds
+   */
   def placeRoom(curRoom: Array[Array[Int]]) : Boolean = {
   val p = roomSpot()
   var a = 1
@@ -88,17 +107,9 @@ Places a room on the dungeon
   return true
   }
 
-
-  /*
-  A class to define a point for easier implementation of matrix insertion
-   */
-  class Point(xc: Int, yc: Int) {
-    var x: Int = xc
-    var y: Int = yc
-  }
-
-  /*
-  For printing the entire map
+  /**
+   * Method to print the entire map
+   * @return Returns a string representation of the map
    */
 
   override def toString(): String = myMap.map(_.mkString).mkString("\n")
