@@ -1,4 +1,4 @@
-import scala.collection.mutable.ListBuffer
+import scala.collection.mutable.ArrayBuffer
 
 /**
  * Main class for the dungeon generation
@@ -15,13 +15,12 @@ class DungeonMap(height: Int, width: Int, numRooms: Int) {
 
   var roomList = List.fill(numRooms)(genRoom())
 
-  var doorList = new ListBuffer[Point]
 
 
   for(roomToAdd <- roomList) {
     var result = true
     while(result) {
-      if(placeRoom(roomToAdd) == true) result = false
+      if(placeRoom(roomToAdd)) result = false
     }
   }
 
@@ -32,7 +31,10 @@ class DungeonMap(height: Int, width: Int, numRooms: Int) {
    */
 
   def addToDoorList(x: Int, y: Int): Unit = {
-    doorList += new Point(x,y)
+
+    print("\n")
+    print(x+",")
+    print(y)
   }
 
   /**
@@ -42,21 +44,21 @@ class DungeonMap(height: Int, width: Int, numRooms: Int) {
   def genRoom(): Array[Array[Int]] =  {
     var a = Array.fill(rnd.nextInt(6)+3,rnd.nextInt(6)+3)(1)
     rnd.nextInt(3) match {
-      case 0 => a(0)(a(0).length/2) = 3;
+      case 0 => a(0)(a(0).length/2) = 3
         addToDoorList(0,a(0).length/2)
 
-      case 1 => a(a.length/2)(0) = 3;
+      case 1 => a(a.length/2)(0) = 3
         addToDoorList(a.length/2,0)
 
-      case 2 => a(a.length-1)(a(0).length/2) = 3;
+      case 2 => a(a.length-1)(a(0).length/2) = 3
         addToDoorList(a.length-1,a(0).length/2)
 
-      case 3 => a(a.length/2)(a(0).length-1) = 3;
+      case 3 => a(a.length/2)(a(0).length-1) = 3
         addToDoorList(a.length/2,a(0).length-1)
 
     }
 
-    return a
+    a
   }
 
   /**
@@ -76,10 +78,10 @@ class DungeonMap(height: Int, width: Int, numRooms: Int) {
     if(p.x+h >= myMap.length || p.y+w >= myMap(0).length) return false
     for(i2 <- 0 to h) {
       for(j2 <- 0 to w) {
-        if(myMap(p.x+i2)(p.y+j2) != 0) return false;
+        if(myMap(p.x+i2)(p.y+j2) != 0) false
       }
     }
-    return true
+    true
   }
 
 
@@ -103,8 +105,8 @@ class DungeonMap(height: Int, width: Int, numRooms: Int) {
       }
 
     }
-    else return false
-  return true
+    else false
+  true
   }
 
   /**
