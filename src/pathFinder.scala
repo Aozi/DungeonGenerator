@@ -34,8 +34,5 @@ class pathFinder (map: Array[Array[Int]]) {
    * @return Return the value of the calculation
    */
 
-  def calcCellValue(currCell: Point, endPoint: Point): Int = {
-
-    return 0
-  }
+  def calcCellValue(currCell: Point, endPoint: Point): Int = (Math.abs(currCell.x - endPoint.x) * 10) + (Math.abs(currCell.y - endPoint.y)*10)
 }

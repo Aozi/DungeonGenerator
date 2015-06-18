@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7efb1eb-0349-4cab-a5a0-90ceee78373b" name="Default" comment="Documentation and pathfinding">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DungeonGenerator.iml" afterPath="$PROJECT_DIR$/DungeonGenerator.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DungeonGenerator.scala" afterPath="$PROJECT_DIR$/src/DungeonGenerator.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DungeonMap.scala" afterPath="$PROJECT_DIR$/src/DungeonMap.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="e7efb1eb-0349-4cab-a5a0-90ceee78373b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pathFinder.scala" afterPath="$PROJECT_DIR$/src/pathFinder.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DungeonGenerator.iws" />
@@ -32,16 +29,16 @@
         <entry file="file://$PROJECT_DIR$/DungeonGenerator.iml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <caret line="0" column="38" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DungeonGenerator.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DungeonGenerator.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DungeonGenerator.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5080214">
+            <state vertical-scroll-proportion="0.0">
               <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
               <folding />
             </state>
@@ -58,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pathFinder.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pathFinder.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pathFinder.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.96256685">
+              <caret line="36" column="61" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -93,9 +90,9 @@
       <list>
         <option value="$PROJECT_DIR$/Docs/MäärittelyDokumentti" />
         <option value="$PROJECT_DIR$/src/Point.scala" />
-        <option value="$PROJECT_DIR$/src/pathFinder.scala" />
         <option value="$PROJECT_DIR$/src/DungeonMap.scala" />
         <option value="$PROJECT_DIR$/src/DungeonGenerator.scala" />
+        <option value="$PROJECT_DIR$/src/pathFinder.scala" />
       </list>
     </option>
   </component>
@@ -393,7 +390,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433720202085</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="doors added to the list">
+      <created>1434623056166</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1434623056166</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -416,7 +419,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17986111" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3094959" sideWeight="0.47708333" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3094959" sideWeight="0.47708333" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -443,7 +446,8 @@
     <MESSAGE value="TIetty määrä huoneita voidaan asettaa luolastoon" />
     <MESSAGE value="Starting to add points for tunneling algorithm" />
     <MESSAGE value="Documentation and pathfinding" />
-    <option name="LAST_COMMIT_MESSAGE" value="Documentation and pathfinding" />
+    <MESSAGE value="doors added to the list" />
+    <option name="LAST_COMMIT_MESSAGE" value="doors added to the list" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -824,10 +828,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pathFinder.scala">
+    <entry file="file://$PROJECT_DIR$/src/DungeonGenerator.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DungeonGenerator.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="38" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -840,18 +852,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DungeonGenerator.iml">
+    <entry file="file://$PROJECT_DIR$/src/pathFinder.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DungeonGenerator.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5080214">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.96256685">
+          <caret line="36" column="61" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
           <folding />
         </state>
       </provider>
