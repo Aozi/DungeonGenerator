@@ -1,4 +1,4 @@
-import scala.collection.mutable.ArrayBuffer
+import scala.collection.mutable.{ListBuffer, ArrayBuffer}
 
 /**
  * Main class for the dungeon generation
@@ -9,13 +9,13 @@ import scala.collection.mutable.ArrayBuffer
  */
 class DungeonMap(height: Int, width: Int, numRooms: Int) {
 
+  val doorList = new ListBuffer[Point]()
+
   val rnd = new scala.util.Random
 
   var myMap = Array.fill(height,width)(0)
 
   var roomList = List.fill(numRooms)(genRoom())
-
-
 
   for(roomToAdd <- roomList) {
     var result = true
@@ -30,11 +30,10 @@ class DungeonMap(height: Int, width: Int, numRooms: Int) {
    * @param y Y coordinate for the door
    */
 
-  def addToDoorList(x: Int, y: Int): Unit = {
+  def addToDoorList(x: Int, y: Int) = {
 
-    print("\n")
-    print(x+",")
-    print(y)
+    val p = new Point(x,y)
+    doorList += p
   }
 
   /**
